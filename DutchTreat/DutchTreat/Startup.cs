@@ -25,10 +25,15 @@ namespace DutchTreat
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            else
+            {
+                app.UseExceptionHandler("/error");
+            }
            app.UseStaticFiles();
            app.UseMvc(cfg =>
            {
-               cfg.MapRoute("Default",
+               cfg.MapRoute("Default","
                    "{controller}/{action}/{id?}",
                    new { controller = "App", Action = "Index" });
            });
