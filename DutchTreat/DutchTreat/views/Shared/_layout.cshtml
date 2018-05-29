@@ -6,24 +6,31 @@
     <link href="~/css/site.css" rel="stylesheet" />
 </head>
 <body>
-    <header class="container">
-        <h1>Welcome to Dutch Treat</h1>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <header class="container">
 
-        <menu>
-            <ul>
-                <li><a asp-controller="App" asp-action="Index">Home</a></li>
-                <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
-                <li><a asp-controller="App" asp-action="About">About</a></li>
-            </ul>
-        </menu>
-    </header>
+            <div class="navbar-brand">Dutch Treat</div>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">&#9778;</button>
+            <div id="menu" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" asp-controller="App" asp-action="Index">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="App" asp-action="Contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="App" asp-action="About">About</a></li>
+                </ul>
+            </div>
+        </header>
+    </nav>
+
+
+
+
     <section class="container">
         <h2>@ViewBag.Title</h2>
         @RenderBody()
     </section>
     <footer class="container">
         <div class="text-center">Copyright 2018 Dutch Treat LLC</div>
-        </footer>
+    </footer>
 
 
 
